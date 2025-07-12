@@ -17,7 +17,6 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -53,27 +52,24 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared" >
+  <ImportGroup Label="Shared">
   </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -130,8 +126,60 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\camera.cpp" />
+    <ClCompile Include="src\engine_psos.cpp" />
+    <ClCompile Include="src\engine_util.cpp" />
+    <ClCompile Include="src\graphics.cpp" />
+    <ClCompile Include="src\input_handler.cpp" />
+    <ClCompile Include="src\Lights.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\material_system.cpp" />
+    <ClCompile Include="src\resource_manager.cpp" />
+    <ClCompile Include="src\scene_manager.cpp" />
+    <ClCompile Include="src\Shadows.cpp" />
+    <ClCompile Include="src\stb_definition.cpp" />
+    <ClCompile Include="src\UI.cpp" />
+    <ClCompile Include="src\vk_buffer.cpp" />
+    <ClCompile Include="src\vk_descriptors.cpp" />
+    <ClCompile Include="src\vk_device.cpp" />
+    <ClCompile Include="src\vk_engine.cpp" />
+    <ClCompile Include="src\vk_images.cpp" />
+    <ClCompile Include="src\vk_initializers.cpp" />
+    <ClCompile Include="src\vk_loader.cpp" />
+    <ClCompile Include="src\vk_pipelines.cpp" />
+    <ClCompile Include="src\vk_renderer.cpp" />
+    <ClCompile Include="src\vk_shaders.cpp" />
+    <ClCompile Include="src\vma_definition.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\camera.h" />
+    <ClInclude Include="src\engine_psos.h" />
+    <ClInclude Include="src\engine_util.h" />
+    <ClInclude Include="src\graphics.h" />
+    <ClInclude Include="src\input_handler.h" />
+    <ClInclude Include="src\Lights.h" />
+    <ClInclude Include="src\material_system.h" />
+    <ClInclude Include="src\resource_manager.h" />
+    <ClInclude Include="src\scene_manager.h" />
+    <ClInclude Include="src\Shadows.h" />
+    <ClInclude Include="src\UI.h" />
+    <ClInclude Include="src\vk_buffer.h" />
+    <ClInclude Include="src\vk_descriptors.h" />
+    <ClInclude Include="src\vk_device.h" />
+    <ClInclude Include="src\vk_engine.h" />
+    <ClInclude Include="src\vk_images.h" />
+    <ClInclude Include="src\vk_initializers.h" />
+    <ClInclude Include="src\vk_loader.h" />
+    <ClInclude Include="src\vk_pipelines.h" />
+    <ClInclude Include="src\vk_renderer.h" />
+    <ClInclude Include="src\vk_shaders.h" />
+    <ClInclude Include="src\vk_types.h" />
+    <ClInclude Include="src\vk_util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\CMakeLists.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
