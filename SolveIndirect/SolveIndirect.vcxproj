@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -104,10 +104,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.261.1\Include;D:\Repos\SolveIndirect\SolveIndirect\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.261.1\Lib;D:\Repos\SolveIndirect\SolveIndirect\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fastgltf.lib;fastgltf_simdjson.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -124,9 +128,17 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Repos\SolveIndirect\SolveIndirect\external\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="external\include\imgui\imgui.cpp" />
+    <ClCompile Include="external\include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="external\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="external\include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="external\include\imgui\imgui_impl_vulkan.cpp" />
+    <ClCompile Include="external\include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="external\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\engine_psos.cpp" />
     <ClCompile Include="src\engine_util.cpp" />
@@ -135,6 +147,10 @@
     <ClCompile Include="src\Lights.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\material_system.cpp" />
+    <ClCompile Include="src\Renderers\flatland_rc_renderer.cpp" />
+    <ClCompile Include="src\Renderers\base_renderer.cpp" />
+    <ClCompile Include="src\Renderers\clustered_forward_renderer.cpp" />
+    <ClCompile Include="src\Renderers\VoxelConeTracingRenderer.cpp" />
     <ClCompile Include="src\resource_manager.cpp" />
     <ClCompile Include="src\scene_manager.cpp" />
     <ClCompile Include="src\Shadows.cpp" />
@@ -153,6 +169,14 @@
     <ClCompile Include="src\vma_definition.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\include\imgui\imconfig.h" />
+    <ClInclude Include="external\include\imgui\imgui.h" />
+    <ClInclude Include="external\include\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="external\include\imgui\imgui_impl_vulkan.h" />
+    <ClInclude Include="external\include\imgui\imgui_internal.h" />
+    <ClInclude Include="external\include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="external\include\imgui\imstb_textedit.h" />
+    <ClInclude Include="external\include\imgui\imstb_truetype.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\engine_psos.h" />
     <ClInclude Include="src\engine_util.h" />
@@ -160,6 +184,10 @@
     <ClInclude Include="src\input_handler.h" />
     <ClInclude Include="src\Lights.h" />
     <ClInclude Include="src\material_system.h" />
+    <ClInclude Include="src\Renderers\flatland_rc_renderer.h" />
+    <ClInclude Include="src\Renderers\base_renderer.h" />
+    <ClInclude Include="src\Renderers\clustered_forward_renderer.h" />
+    <ClInclude Include="src\Renderers\VoxelConeTracingRenderer.h" />
     <ClInclude Include="src\resource_manager.h" />
     <ClInclude Include="src\scene_manager.h" />
     <ClInclude Include="src\Shadows.h" />

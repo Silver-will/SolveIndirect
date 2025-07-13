@@ -24,7 +24,6 @@ using namespace std::literals::string_literals;
 
 #define M_PI       3.14159265358979323846
 
-
 void ClusteredForwardRenderer::Init(VulkanEngine* engine)
 {
 	assert(engine != nullptr);
